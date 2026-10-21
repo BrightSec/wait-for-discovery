@@ -36,7 +36,7 @@ More information is available on Bright’s:
 - [Website](https://www.brightsec.com/)
 - [Knowledge base](https://docs.brightsec.com/docs/quickstart)
 - [YouTube channel](https://www.youtube.com/channel/UCoIC0T1pmozq3eKLsUR2uUw)
-- [GitHub Actions](https://github.com/marketplace?query=neuralegion+)
+- [GitHub Actions](https://github.com/marketplace?query=brightsec+)
 
 # Inputs
 
@@ -81,7 +81,7 @@ start_and_wait_scan:
   steps:
     - name: Start Bright discovery 🏁
       id: start
-      uses: NeuraLegion/run-discovery@v1
+      uses: BrightSec/run-discovery@v1
       with:
         api_token: ${{ secrets.BRIGHTSEC_TOKEN }}
         name: GitHub discovery ${{ github.sha }}
@@ -96,7 +96,7 @@ start_and_wait_scan:
       run: echo "The discovery was started on ${{ steps.start.outputs.url }}"
     - name: Wait for discovery to finish ⏳
       id: wait
-      uses: NeuraLegion/wait-for-discovery@v1
+      uses: BrightSec/wait-for-discovery@v1
       with:
         api_token: ${{ secrets.BRIGHTSEC_TOKEN }}
         discovery_id: ${{ steps.start.outputs.id }}
