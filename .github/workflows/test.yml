@@ -24,7 +24,7 @@ jobs:
           cp -R dist/ release/dist/
       - name: Start Bright Discovery 🏁
         id: discovery
-        uses: NeuraLegion/run-discovery@release
+        uses: BrightSec/run-discovery@release
         with:
           api_token: ${{ secrets.BRIGHTSEC_TOKEN }}
           name: GitHub discovery ${{ github.sha }}
